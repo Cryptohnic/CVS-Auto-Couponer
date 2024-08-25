@@ -47,9 +47,11 @@ function scrollToBottom() {
     });
 }
 
-waitForElement('.coupon-action.button-blue.sc-send-to-card-action').then(element => {
+waitForElement('#tabpanel-0').then(element => {
     console.log('Page correctly accessed!');
-    return scrollToBottom(); 
+    return new Promise(resolve => setTimeout(resolve, 500));
+}).then(() => {
+    return scrollToBottom();
 }).then(() => {
     console.log('Scrolling is done');
     let i = 1;
